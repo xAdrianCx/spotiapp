@@ -3,11 +3,6 @@
         <input #termino type="text" (keyup)="searchArtist(termino.value)" class="form-control" placeholder="Buscar artista">
     </div>
 </div>
+<app-loading *ngIf="loading"></app-loading>
 
-<div class="card-columns m-5">
-    <div class="card" *ngFor="let artist of artists">
-      <img class="card-img-top" [src]="artist.images[0].url" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{artist.name}}</h5>
-      </div>
-</div>
+<app-cards *ngIf="!loading" [items]="artists"></app-cards>
