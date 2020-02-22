@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
                     this.nuevasCanciones = data;
                     this.loading = false;
                   });
+    console.log(this.nuevasCanciones)
   }
 
   ngOnInit(): void {
